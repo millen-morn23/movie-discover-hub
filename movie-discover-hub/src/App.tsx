@@ -16,15 +16,21 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+
+      {/*FIX FOR GITHUB PAGES */}
+      <BrowserRouter basename="/movie-discover-hub">
+
         <Navbar />
+
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/movie/:id" element={<MovieDetail />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+
       </BrowserRouter>
+
     </TooltipProvider>
   </QueryClientProvider>
 );
